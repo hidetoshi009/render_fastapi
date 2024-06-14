@@ -44,8 +44,12 @@ def index():
             <title>Some HTML in here</title>
         </head>
         <body>
-            <h1>Look ma! HTML!</h1>
+            <h1>これは課題です!</h1>
         </body>
     </html>
     """
     return HTMLResponse(content=html_content, status_code=200)
+
+@app.post("/present")
+async def new_naming(present):
+    return {"response": f"サーバです。夏は暑いです {present}熱中症に気を付けて。これは塩です"}
